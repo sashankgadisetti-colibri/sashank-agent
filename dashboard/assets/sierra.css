@@ -1,0 +1,195 @@
+/* Sierra design tokens — PLACEHOLDER interpretation.
+   Sashank's actual Sierra design guide was not locatable (checked SharePoint,
+   Outlook, this repo — 2026-07-07). All look-and-feel routes through these
+   tokens; swap values here when the real guide surfaces. */
+
+:root {
+  /* palette */
+  --sierra-sand: #faf7f0;
+  --sierra-sand-deep: #f1ebdd;
+  --sierra-ink: #2d2a26;
+  --sierra-ink-soft: #6b6459;
+  --sierra-terracotta: #b5552d;
+  --sierra-terracotta-soft: #f3e0d6;
+  --sierra-pine: #3f5c50;
+  --sierra-pine-soft: #e2eae6;
+  --sierra-sky: #5b7a99;
+  --sierra-line: #e0d8c8;
+
+  /* type */
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-ui: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* shape */
+  --radius: 10px;
+  --pad: 1.1rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--sierra-sand);
+  color: var(--sierra-ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+header.site {
+  background: var(--sierra-ink);
+  color: var(--sierra-sand);
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+header.site .brand {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+header.site .brand .accent { color: var(--sierra-terracotta); }
+
+nav.site {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+nav.site a {
+  color: var(--sierra-sand);
+  text-decoration: none;
+  opacity: 0.75;
+  padding-bottom: 2px;
+}
+
+nav.site a:hover { opacity: 1; }
+
+nav.site a.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--sierra-terracotta);
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.6rem 1.4rem 3rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0.4rem 0 0.2rem;
+}
+
+p.lede {
+  color: var(--sierra-ink-soft);
+  margin-top: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--sierra-line);
+  border-radius: var(--radius);
+  padding: var(--pad);
+}
+
+.card h2 {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--sierra-pine);
+  margin: 0 0 0.5rem;
+}
+
+.card a.more {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--sierra-terracotta);
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--sierra-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.table-wrap { overflow-x: auto; margin-top: 1.2rem; }
+
+th {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--sierra-ink-soft);
+  background: var(--sierra-sand-deep);
+  padding: 0.6rem 0.8rem;
+}
+
+td {
+  padding: 0.6rem 0.8rem;
+  border-top: 1px solid var(--sierra-line);
+  vertical-align: top;
+}
+
+.tag {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tag.open    { background: var(--sierra-terracotta-soft); color: var(--sierra-terracotta); }
+.tag.waiting { background: #eef2f6; color: var(--sierra-sky); }
+.tag.done    { background: var(--sierra-pine-soft); color: var(--sierra-pine); }
+
+.entry {
+  background: #fff;
+  border: 1px solid var(--sierra-line);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  margin-top: 1rem;
+}
+
+.entry h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+}
+
+.entry .meta {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--sierra-ink-soft);
+}
+
+ul.tight { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+ul.tight li { margin: 0.25rem 0; }
+
+footer.site {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.4rem 2rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--sierra-ink-soft);
+}

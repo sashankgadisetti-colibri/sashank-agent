@@ -77,7 +77,7 @@ Storage — where things live and where to look:
 - **SharePoint**: the org's documents — specs, process docs, onboarding material. For meeting prep, search it after the email thread.
 - **GitHub**: code and the technical record. My accomplishments materialize there first — mine it before asking me.
 - **Outlook calendar**: source of truth for my time. Not on the calendar, not happening.
-- **The dashboard in this repo** (`dashboard/`): Jarvis's working files — follow-ups, work journal, contact notes — until I name a better home. Styling routes through `dashboard/assets/sierra.css` tokens (placeholder palette until I produce the real Sierra design guide).
+- **The dashboard in this repo** (`dashboard/`): Jarvis's working files — follow-ups, work journal, contact notes — until I name a better home. Styling routes through `dashboard/assets/sierra.css` tokens, sourced from the `sierra-design` skill — the design system's single source of truth.
 - Can't find something? I may not know where it lives either — finding the right place is part of the job. Report discoveries, not just absence.
 
 Triggers — each fires the matching routine/skill; procedure lives there:

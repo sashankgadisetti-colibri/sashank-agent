@@ -101,4 +101,50 @@ Triggers — each fires the matching routine/skill; procedure lives there:
 - Irreversible action in an ungranted category → stop, ask, recommend.
 - I make a call you think is wrong → "I'd advise against it, sir." Reason, alternative, my decision.
 
+### Researcher subagent — external knowledge gate
+
+STOP — before answering any question about a product, tool, company, industry trend, market, technology, or concept not explicitly defined in this repo's files: route to the researcher subagent via the Agent tool.
+
+The trigger is the nature of the question — not whether you think you already know the answer. If the question is about something in the world (not this codebase, not a task, not a message thread), it routes.
+
+How to route:
+
+- Pass the user's exact question as the Agent prompt
+- Include any stated constraints (scope, format, depth)
+- Return the researcher's output as-is — no editorializing, no additions
+
+Violations (never do these):
+
+- Answering directly, even one sentence
+- Saying "I don't have current data, but generally..." — that is an answer, not a route
+- Routing AND adding your own commentary after
+- Checking another tool first and then answering anyway
+
+If unsure whether this qualifies, it qualifies.
+If the researcher subagent cannot be invoked, say so and stop.
+Do not substitute a direct answer.
+
+### Journal-keeper subagent — Friday journal and wiki upkeep gate
+
+STOP — before writing any work-journal entry, or before running any wiki-ingest/wiki-lint pass on Sashank's behalf: route to the journal-keeper subagent via the Agent tool.
+
+The trigger is the nature of the task — not whether you think you can do it faster inline. If the task is "compile what I accomplished" or "update/lint the wiki," it routes. This includes the weekly wiki-update routine and every Friday journal entry, scheduled or ad hoc.
+
+How to route:
+
+- Pass the time window (default: since the last entry, or last 7 days) and any stated constraints
+- Let journal-keeper read commits, PRs, and wiki files itself — do not pre-summarize the sources for it
+- Return journal-keeper's summary as-is — no editorializing, no additions
+
+Violations (never do these):
+
+- Writing a journal entry or wiki page directly instead of routing
+- Summarizing "what Sashank did this week" from memory or from this conversation's context instead of routing
+- Routing AND then also writing to dashboard/journal.html or wiki/ yourself
+- Skipping the route because it's Friday and the answer seems obvious
+
+DO NOT let journal-keeper touch anything outside `dashboard/` and `wiki/` — if a task needs changes elsewhere, do not route it here.
+If unsure whether this qualifies, it qualifies.
+If the journal-keeper subagent cannot be invoked, say so and stop. Do not substitute writing the entry yourself.
+
 For skill dispatch rules, see .claude/skills/RESOLVER.md

@@ -29,6 +29,23 @@
       <li>Stood up the Jarvis working dashboard: follow-up tracking, work journal, and contact notes as linked pages in the agent repo.</li>
     </ul>
   </div>
+
+  <div class="entry">
+    <h2>Week of July 6, 2026 (cont.)</h2>
+    <p class="meta">Compiled July 8, 2026 — mid-week, ahead of the Friday cadence, from commits on <code>sashank-agent</code></p>
+    <ul class="tight">
+      <li>Merged PR #1 (chief-of-staff-agent-design), landing the Jarvis identity document and first dashboard cut on main.</li>
+      <li>Re-skinned the dashboard on the Sierra design system: installed the <code>sierra-design</code> skill and rewrote <code>dashboard/assets/sierra.css</code> plus the four dashboard pages against its tokens.</li>
+      <li>Installed a library of verified knowledge-work skills — call-prep, memory-management, search, task-management — and the docx/pptx/xlsx/pdf document-editing skill set.</li>
+      <li>Built a four-skill message-response chain (message-triage, draft-writer, personal-tone, qa-check) for drafting and vetting outbound replies.</li>
+      <li>Stood up the wiki knowledge base: skill dispatch resolver (<code>RESOLVER.md</code>), the wiki-ingest/wiki-lint/wiki-query skills, and seven stub topic pages mirroring CLAUDE.md's job list.</li>
+      <li>Ingested the first real wiki content page — <code>internship-program.md</code> — via an approved diff, per the wiki maintenance rule requiring sign-off before any wiki write.</li>
+      <li>Documented the agent system architecture (orchestrator plus researcher, meeting-prepper, and journal-keeper subagents) in <code>diagrams/agent-system.md</code>.</li>
+      <li>Added the researcher subagent and its external-knowledge routing gate in CLAUDE.md, then shipped its first output: a LangGraph-vs-Claude-Agent-SDK brief in <code>wiki/research</code>.</li>
+      <li>Added the journal-keeper subagent (this record's author) and its routing hard-stop in CLAUDE.md, so journal and wiki-upkeep work always routes through a dedicated agent.</li>
+      <li>Added the <code>/debate</code> skill: an Advocate-vs-Skeptic pressure-test pattern with locked synthesis.</li>
+    </ul>
+  </div>
 </main>
 <footer class="site">
   Entry rule: every line traces to an artifact — a PR, a document, a decision on record. No vibes, no padding.
